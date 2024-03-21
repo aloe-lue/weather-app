@@ -3,7 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <div id="main-content">
+      <header class="main-header">
+        <h1 class="app-name">Weather App</h1>
+
+        <form action="/" method="get">
+          <div>
+            <label for="search-weather-location"></label>
+            <input type="search" required id="search-weather-location" />
+          </div>
+
+          <button id="search-location" type="submit"></button>
+        </form>
+      </header>
+
+      <main class="main-weather">
+        <!-- todo: display weather info here -->
+      </main>
+
+      <footer class="main-sources">
+        <!-- todo: display sources here -->
+      </footer>
+    </div>
+  </body>
 </html>
