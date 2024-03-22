@@ -8,9 +8,7 @@
   <body>
     <div id="main-content">
       <header class="main-header">
-        <h1 class="app-name">Weather App</h1>
-
-        <form action="/" method="get">
+        <form action="/" method="get" id="form-weather-location">
           <div>
             <label for="search-weather-location"></label>
             <input type="search" required id="search-weather-location" />
@@ -22,6 +20,18 @@
 
       <main class="main-weather">
         <!-- todo: display weather info here -->
+        <div class="current-weather">
+          <h2 id="location-name">Manila</h2>
+          <h2 id="temp-c">30 °f</h2>
+
+          <p id="basic-info">
+            <span class="condition-text">cloudy /</span>
+
+            <span class="cloud-text">23 ° /</span>
+
+            <span class="feels-c">31 °f</span>
+          </p>
+        </div>
       </main>
 
       <footer class="main-sources">
