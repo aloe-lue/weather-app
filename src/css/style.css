@@ -1,4 +1,214 @@
 body {
-	background-color: white;
-	color: black;
+  background-color: white;
+  color: black;
 }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* start here */
+
+@font-face {
+  font-family: 'roboto-regular';
+  src: url('../fonts/roboto-woff-woff2/roboto-regular-webfont.woff2')
+    format('woff2')
+    url('../fonts/roboto-woff-woff2/roboto-regular-webfont.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+  --title-fs: clamp(14px, 5vw, 24px);
+  --title-p: 0.77rem 0.45rem;
+  --title-ff: 'roboto regular', system-ui;
+  --title-bg: transparent;
+  --title-ls: 1px;
+
+  --form-d: flex;
+  --form-jc: center;
+
+  --srch-app: none;
+  --srch-brdr: 1px solid lightgray;
+  --srch-brdr-bl-rad: 5px;
+  --srch-brdr-tl-rad: 5px;
+  --srch-fs: clamp(14px, 5vw, 24px);
+  --srch-p: 0.45rem;
+  --srch-ff: 'roboto-regular';
+  --srch-ls: 1px;
+
+  --srch-btn-width: 32px;
+  --srch-btn-border: 1px solid lightgrey;
+  --srch-btn-order-bottom-right-radius: 5px;
+  --srch-btn-border-top-right-radius: 5px;
+
+  --srch-btn-img-width: 100%;
+  --srch-btn-img-height: 100%;
+}
+
+#main-content {
+  height: 100dvh;
+}
+
+h1.weather-app {
+  font-size: var(--title-fs) ;
+  padding: var(--title-p);
+  font-family: var(--title-ff);
+  background-color: var(--title-bg);
+  letter-spacing: var(--title-ls);
+}
+
+form#form-weather-location {
+  display: var(--form-d);
+  justify-content: var(--form-jc);
+}
+
+input#search-weather-location {
+  appearance: var(--srch-a) ;
+  border: var(--srch-brdr) ;
+  border-bottom-left-radius: var(--srch-brdr-bl-rad) ;
+  border-top-left-radius: var(--srch-brdr-tl-rad) ;
+  font-size: var(--srch-fs) ;
+  padding: var(--srch-p);
+  font-family: var(--srch-ff);
+  letter-spacing: var(--srch-ls) ;
+}
+
+button#search-location {
+  width: var(--srch-btn-width);
+  border: var(--srch-btn-border); 
+  border-bottom-right-radius: var(--srch-btn-border-bottom-right-radius);
+  border-top-right-radius: var(--srch-btn-border-top-radius) ;
+}
+
+button#search-location > img {
+  height: var(--srch-btn-img-height);
+  width: var(--srch-btn-img-width) ;
+}
+
