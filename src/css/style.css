@@ -137,8 +137,7 @@ table {
 
 @font-face {
   font-family: 'roboto-regular';
-  src: url('../fonts/roboto-woff-woff2/roboto-regular-webfont.woff2')
-    format('woff2')
+  src: url('../fonts/roboto-woff-woff2/roboto-regular-webfont.woff2') format('woff2'),
     url('../fonts/roboto-woff-woff2/roboto-regular-webfont.woff') format('woff');
 }
 
@@ -147,7 +146,7 @@ table {
 *::after {
   --title-fs: clamp(14px, 5vw, 24px);
   --title-p: 0.77rem 0.45rem;
-  --title-ff: 'roboto regular', system-ui;
+  --title-ff: 'roboto-regular', system-ui, sans-serif;
   --title-bg: transparent;
   --title-ls: 1px;
 
@@ -160,7 +159,7 @@ table {
   --srch-brdr-tl-rad: 5px;
   --srch-fs: clamp(14px, 5vw, 24px);
   --srch-p: 0.45rem;
-  --srch-ff: 'roboto-regular';
+  --srch-ff: 'roboto-regular', system-ui, sans-serif;
   --srch-ls: 1px;
 
   --srch-btn-width: 32px;
@@ -170,6 +169,43 @@ table {
 
   --srch-btn-img-width: 100%;
   --srch-btn-img-height: 100%;
+
+  --location-font-size: clamp(14px, 5vw, 24px);
+  --location-padding: 0.4rem 0.7rem;
+  --location-font-family: 'roboto-regular';
+
+  --date-font-size: clamp(12px, 5vw, 18px);
+  --date-padding: 0.4rem 0.7rem;
+  --date-font-family: 'roboto-regular';
+  
+  --main-weather-display: grid;
+  --main-weather-grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+  --main-weather-width: min(75ch, 100%);
+  --main-weather-margin: 0 auto;
+
+  --add-weather-current-display: grid;
+  --add-weather-current-grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  --add-weather-current-margin: 0.45rem;
+  --add-weather-current-border-radius: 5px;
+  --add-weather-current-box-shadow: 0 0 5px 5px #00000015;
+  --add-weather-current-gap: 1rem;
+
+  --add-weather-current-div-font-size: clamp(12px, 5vw, 18px);
+  --add-weather-current-div-font-family: monospace;
+  --add-weather-current-div-overflow-wrap: anywhere;
+  --add-weather-current-div-padding: 0.5rem;
+
+  --temp-c-font-size: clamp(42px, 5vw, 72px);
+  --temp-c-font-family: monospace;
+
+ --icon-temp-c-display: flex;
+ --icon-temp-c-flex-direction: column;
+ --icon-temp-c-align-items: center;
+ --icon-temp-c-justify-content: center;
+ --icon-temp-c-height: 13rem;
+
+  --add-weather-current-div-span-font-size: clamp(12px, 3vw, 18px);
+  --add-weather-current-div-span-color: grey;
 }
 
 #main-content {
@@ -212,3 +248,53 @@ button#search-location > img {
   width: var(--srch-btn-img-width) ;
 }
 
+.location-name-and-countr {
+  font-size: var(--location-font-size);
+  padding: var(--location-padding); 
+  font-family: var(--location-font-family);
+}
+
+.location-date {
+  font-size: var(--date-font-size);
+  padding: var(--date-padding);
+  font-family: var(--date-font-family);
+}
+
+div.main-weather {
+  display: var(--main-weather-display);
+  grid-template-columns: var(--main-weather-grid-template-columns);
+  width: var(--main-weather-width);
+  margin: var(--main-weather-margin);
+}
+.uv-feelslike-c-humidity-pressure-mb-vis-km {
+  display: var(--add-weather-current-display);
+  grid-template-columns: var(--add-weather-current-grid-template-columns);
+  margin: var(--add-weather-current-margin);
+  border-radius: var(--add-weather-current-border-radius);
+  box-shadow: var(--add-weather-current-box-shadow);
+  gap: var(--add-weather-current-gap);
+}
+
+.uv-feelslike-c-humidity-pressure-mb-vis-km > div {
+  font-size: var(--add-weather-current-div-font-size);
+  font-family: var(--add-weather-current-div-font-family);
+  overflow-wrap: var(--add-weather-current-div-overflow-wrap);
+  padding: var(--add-weather-current-div-padding);;
+}
+
+.temp-c {
+  font-size: var(--temp-c-font-size);
+  font-family: var(--temp-c-font-family);
+}
+.icon-temp-c {
+  display: var(--icon-temp-c-display);
+  flex-direction: var(--icon-temp-c-flex-direction);
+  align-items:  var(--icon-temp-c-align-items);
+  justify-content: var(--icon-temp-c-justify-content);
+  height: var(--icon-temp-c-height); 
+}
+
+.uv-feelslike-c-humidity-pressure-mb-vis-km > div span:first-child {
+  font-size: var(--add-weather-current-div-span-font-size);
+  color:   var(--add-weather-current-div-span-color);
+}
