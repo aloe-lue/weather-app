@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+  <body>
+    <div id="main-content">
+      <header class="main-header">
+        <h1 class="weather-app">Weather App</h1>
+
+        <form action="/" method="get" id="form-weather-location">
+          <div>
+            <label for="search-weather-location"></label>
+            <input
+              type="search"
+              required
+              id="search-weather-location"
+              value="London"
+            />
+          </div>
+
+          <button id="search-location" type="submit"></button>
+        </form>
+
+        <div class="location-name-and-country">Manila, Philippines</div>
+        <div class="location-date">March 23, 10:00</div>
+      </header>
+
+      <main class="main-weather">
+        <div class="main-weather">
+          <div class="icon-temp-c">
+            <div class="temp-c">23 &deg;C</div>
+            <img class="condition-img" src=""></img>
+            <div class="condition-text">cloudy</div>
+          </div>
+
+          <div class="uv-feelslike-c-humidity-pressure-mb-vis-km">
+            <div class="uv-val">
+              <span>UV</span>
+
+              <div class="uv">0</div>
+            </div>
+
+            <div class="feelslike-val">
+              <span>Feels Like</span>
+              <div class="feelslike-c"> 24 &deg;C</div>
+            </div>
+
+            <div class="humidity-val">
+              <span>Humidity</span>
+              <div class="humidity">50%</div>
+            </div>
+
+            <div class="wind-dir-wind-kph">
+              <span>Wind</span>
+              <div class="wind-dir">WE</div>
+              <div class="wind-kph">75kph</div>
+            </div>
+
+            <div>
+              <span>air pressur in mb</span>
+              <div class="pressure-mb">1002 mb</div>
+            </div>
+
+            <div>
+              <span class="visibility">visibility</span>
+              <div class="vis-km">50 km</div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="main-sources">
+        <!-- todo: display sources here -->
+        <a href="https://www.weatherapi.com/" title="Free Weather API"
+          ><img
+            src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
+            alt="Weather data by WeatherAPI.com"
+            border="0"
+       /></a>
+
+      </footer>
+    </div>
+  </body>
+</html>
