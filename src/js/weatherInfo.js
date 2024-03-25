@@ -62,9 +62,7 @@ const weatherInfo = ({
         pressureMbText.innerText = `${current.pressure_mb}`;
         visKmText.innerText = `${current.vis_km}`;
       })
-      .catch((err) => {
-        console.log();
-      }); 
+      .catch((err) => err); 
 
     return weatherInfoGetter;
   };
