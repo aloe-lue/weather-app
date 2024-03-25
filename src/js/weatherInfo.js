@@ -61,12 +61,10 @@ const weatherInfo = ({
         windKphText.innerText = `${current.wind_kph}`;
         pressureMbText.innerText = `${current.pressure_mb}`;
         visKmText.innerText = `${current.vis_km}`;
-        
-        if (resolve['error']) {
-          console.log(resolve['error'].message);
-        }
       })
-      .catch((err) => console.log(err)); 
+      .catch((err) => {
+        console.log();
+      }); 
 
     return weatherInfoGetter;
   };
