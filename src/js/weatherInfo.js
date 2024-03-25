@@ -49,13 +49,13 @@ const weatherInfo = ({
         const locationInfo = resolve['location'];
 
         locationName.innerText = `${locationInfo.name}, ${locationInfo.country}`;
-        tempC.innerText = `${current.temp_c} C`;
+        tempC.innerText = `${current.temp_c} °C`;
         conditionText.innerText = `${current.condition.text}`; 
         conditionImage.setAttribute('src', `https:${current.condition.icon}`);
         locationDate.innerText = `Last Updated: ${current.last_updated}`;
 
         uvText.innerText = `${current.uv}`; 
-        feelsLikeText.innerText = `${current.feelslike_c} C`;
+        feelsLikeText.innerText = `${current.feelslike_c} °C`;
         humidityText.innerText = `${current.humidity}%`;
         windDirText.innerText = `${current.wind_dir}`;
         windKphText.innerText = `${current.wind_kph}`;
