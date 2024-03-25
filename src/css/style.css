@@ -248,7 +248,7 @@ button#search-location > img {
   width: var(--srch-btn-img-width) ;
 }
 
-.location-name-and-countr {
+.location-name-and-country {
   font-size: var(--location-font-size);
   padding: var(--location-padding); 
   font-family: var(--location-font-family);
