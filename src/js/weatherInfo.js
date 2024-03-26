@@ -45,6 +45,10 @@ const weatherInfo = ({
   const getInfo = () => {
     const weatherInfoGetter = weatherApi({ location }).getWeather()
       .then((resolve) => {
+        if (!resolve.ok) {
+          alert(resolve['error'].message);
+        }
+
         const current = resolve['current'];
         const locationInfo = resolve['location'];
 
@@ -61,6 +65,8 @@ const weatherInfo = ({
         windKphText.innerText = `${current.wind_kph}`;
         pressureMbText.innerText = `${current.pressure_mb}`;
         visKmText.innerText = `${current.vis_km}`;
+
+        
       })
       .catch((err) => err); 
 
