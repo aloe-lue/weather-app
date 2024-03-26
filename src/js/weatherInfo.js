@@ -2,10 +2,16 @@ const weatherAPI = ({ location  }) => {
   const url = `https://api.weatherapi.com/v1/current.json?key=53a730f3a4b74aefa2144040241703&q=${location}`;
   
   const getWeather = async () => {
-    const resources = await fetch(url, { mode: 'cors' });
-    const resolve = await resources.json();
-
-    return resolve;
+    try {
+      const resources = await fetch(url, { mode: 'cors' });
+      const resolve = await resources.json();
+      if (!resources.ok) {
+        alert(resolve['error'].message);
+      }
+      return resolve;
+    } catch(err) {
+      console.log(err);
+    }
   }
   
   return { getWeather };
@@ -45,29 +51,24 @@ const weatherInfo = ({
   const getInfo = () => {
     const weatherInfoGetter = weatherApi({ location }).getWeather()
       .then((resolve) => {
-        if (!resolve.ok) {
-          alert(resolve['error'].message);
-        }
+          const current = resolve['current'];
+          const locationInfo = resolve['location'];
 
-        const current = resolve['current'];
-        const locationInfo = resolve['location'];
+          locationName.innerText = `${locationInfo.name}, ${locationInfo.country}`;
+          tempC.innerText = `${current.temp_c} °C`;
+          conditionText.innerText = `${current.condition.text}`; 
+          conditionImage.setAttribute('src', `https:${current.condition.icon}`);
+          locationDate.innerText = `Last Updated: ${current.last_updated}`;
 
-        locationName.innerText = `${locationInfo.name}, ${locationInfo.country}`;
-        tempC.innerText = `${current.temp_c} °C`;
-        conditionText.innerText = `${current.condition.text}`; 
-        conditionImage.setAttribute('src', `https:${current.condition.icon}`);
-        locationDate.innerText = `Last Updated: ${current.last_updated}`;
+          uvText.innerText = `${current.uv}`; 
+          feelsLikeText.innerText = `${current.feelslike_c} °C`;
+          humidityText.innerText = `${current.humidity}%`;
+          windDirText.innerText = `${current.wind_dir}`;
+          windKphText.innerText = `${current.wind_kph}`;
+          pressureMbText.innerText = `${current.pressure_mb}`;
+          visKmText.innerText = `${current.vis_km}`;
 
-        uvText.innerText = `${current.uv}`; 
-        feelsLikeText.innerText = `${current.feelslike_c} °C`;
-        humidityText.innerText = `${current.humidity}%`;
-        windDirText.innerText = `${current.wind_dir}`;
-        windKphText.innerText = `${current.wind_kph}`;
-        pressureMbText.innerText = `${current.pressure_mb}`;
-        visKmText.innerText = `${current.vis_km}`;
-
-        
-      })
+       })
       .catch((err) => err); 
 
     return weatherInfoGetter;
